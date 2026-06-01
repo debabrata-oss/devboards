@@ -1,0 +1,169 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 380px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .header h2 {
+      font-size: 22px;
+      font-weight: 600;
+      color: #111;
+    }
+
+    .header p {
+      font-size: 14px;
+      color: #666;
+      margin-top: 4px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 6px;
+    }
+
+    .input-wrap {
+      position: relative;
+      margin-bottom: 14px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px 12px;
+      font-size: 14px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      outline: none;
+      transition: border 0.2s;
+    }
+
+    input:focus {
+      border-color: #4f6ef7;
+    }
+
+    .toggle-eye {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      font-size: 18px;
+      color: #999;
+      user-select: none;
+    }
+
+    .forgot {
+      text-align: right;
+      margin-bottom: 1.2rem;
+    }
+
+    .forgot a {
+      font-size: 13px;
+      color: #4f6ef7;
+      text-decoration: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #4f6ef7;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 500;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background: #3a56e0;
+    }
+
+    .signup {
+      text-align: center;
+      font-size: 13px;
+      color: #666;
+      margin-top: 1.2rem;
+    }
+
+    .signup a {
+      color: #4f6ef7;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="header">
+      <h2>Welcome back</h2>
+      <p>Sign in to your account</p>
+    </div>
+
+    <label for="email">Email</label>
+    <div class="input-wrap">
+      <input type="email" id="email" placeholder="you@example.com" />
+    </div>
+
+    <label for="password">Password</label>
+    <div class="input-wrap">
+      <input type="password" id="password" placeholder="••••••••" />
+      <span class="toggle-eye" onclick="togglePwd()">👁</span>
+    </div>
+
+    <div class="forgot">
+      <a href="#">Forgot password?</a>
+    </div>
+
+    <button onclick="handleLogin()">Sign in</button>
+
+    <p class="signup">Don't have an account? <a href="#">Sign up</a></p>
+  </div>
+
+  <script>
+    function togglePwd() {
+      const pwd = document.getElementById('password');
+      pwd.type = pwd.type === 'password' ? 'text' : 'password';
+    }
+
+    function handleLogin() {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      if (!email || !password) {
+        alert('Please fill in all fields.');
+        return;
+      }
+      alert('Logged in as: ' + email);
+    }
+  </script>
+
+</body>
+</html>
