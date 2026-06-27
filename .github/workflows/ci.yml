@@ -22,7 +22,7 @@ jobs:
          uses: docker/build-push-actions@v7
          with:
            push: true
-           tags: ${{ vars.DOCKERHUB_USERNAME }}/devboards-fe-advance:lastest 
+           tags: ${{ vars.DOCKERHUB_USERNAME }}/devboards-fe-advance:latest 
          
           
        
